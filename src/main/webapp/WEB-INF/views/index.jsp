@@ -52,51 +52,53 @@ pageEncoding="UTF-8"%>
 <div class="content-wrapper">
 
     <div class="content">
-        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
 
         <div class="pure-g">
-            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked">
+            <div class="l-box-lrg pure-u-1 pure-u-md-1-5">
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <form method="get" action="search" class="pure-form pure-form-stacked">
                     <fieldset>
 
-                        <label for="name">Your Name</label>
-                        <input id="name" type="text" placeholder="Your Name">
+                        <label for="searchLbl">Buscar por:</label>
+                        <input id="searchLbl" name="toSearch" type="text" placeholder="Busca...">
+
+                        <input type="checkbox" name="stopword" value="true"/>Remove Stopword<br>
+
+                        <input type="checkbox" name="stemming" value="true"/>Usar stemming<br>
 
 
-                        <label for="email">Your Email</label>
-                        <input id="email" type="email" placeholder="Your Email">
-
-                        <label for="password">Your Password</label>
-                        <input id="password" type="password" placeholder="Your Password">
-
-                        <button type="submit" class="pure-button">Sign Up</button>
+                        <button type="submit" class="pure-button">Buscar</button>
                     </fieldset>
                 </form>
             </div>
 
-            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contact Us</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                </p>
+            <div class="l-box-lrg pure-u-1 pure-u-md-1-5">
+            </div>
+        </div>
 
-                <h4>More Information</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+    </div>
+
+    <div class="content">
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-1-5">
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <c:forEach items="${docs}" var="doc">
+                    <a href="${doc}"/>${doc}</a><br>
+                </c:forEach>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-1-5">
             </div>
         </div>
 
     </div>
 
     <div class="footer l-box is-center">
-        View the source of this layout to learn more. Made with love by the YUI Team.
     </div>
-
 </div>
 
 
